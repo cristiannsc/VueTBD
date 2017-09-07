@@ -1,17 +1,17 @@
 <template>
   <div class="center">
     <h2>{{title}}</h2>
-    <form action="http://localhost:8081/sakila-tbd" method="POST">
+    
       <p>
         <label for="firstName">Nombre</label>
-        <input type="text" id="firstName" name="firstName" value="Ej.: Tom" onClick="this.select();">
+        <input type="text" id="firstName" name="firstName" v-model="actor.firstName" onClick="this.select();">
       </p>
       <p>
         <label for="lastName">Apellido</label>
-        <input type="text" id="lastName" name="lastName" value="Ej.: Hanks" onClick="this.select();">
+        <input type="text" id="lastName" name="lastName" v-model="actor.lastName" onClick="this.select();">
       </p>
-      <p><input type="submit" value="Agregar actor"></button></p>
-    </form>
+      <p><button v-on:click="addActor()">Agregar Actor</button></p>
+    
   </div>
 </template>
 
@@ -20,10 +20,13 @@
     data(){
       return{
         title:'Agregar actor',
+        actor:{firstName:'',lastName:''}
       }
     },
-    mounted:function(){
-      console.log('Index.vue');
+    methods:{
+      addActor:function(){
+        this.$http.post('http://localhost:8080/TallerSakilaTBD/actors', this.actor)
+      }
     }
   }
 </script>

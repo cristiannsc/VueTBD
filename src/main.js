@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 Vue.use(VueResource);
 const routes = [
   { path: '/index', alias: '/', component: Index},
-  { path:'/actors', component: Actors}
+  { path:'/actors', component: Actors},
   { path:'/addActor', component: AddActor}
 ]
 
