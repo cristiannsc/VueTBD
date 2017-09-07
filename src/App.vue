@@ -8,6 +8,7 @@
       <nav>
         <a href="#/">Home</a>
         <a href="#/actors">Lista</a>
+        <a href="#/addActor">Agregar Actor</a>
       </nav>
     </header>
 
